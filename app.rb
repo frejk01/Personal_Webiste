@@ -3,7 +3,7 @@
 #
 require 'sinatra'
 require 'slim'
-require 'sqlite3'
+#require 'sqlite3'
 require 'bcrypt'
 require 'byebug'
 require_relative './model.rb'
@@ -78,10 +78,15 @@ end
 post('/register') do
 end
 
+# Redirects to the proper error page
+#
+#
+#
+get('/error/:code') do
+    slim(:error, locals:{user:session[:user_hash],status:session[:login_status], code:params[:code]})
+end
+
 get('/*') do
     redirect('/error/404')
 end
 
-get('/error/:code') do
-    slim(:error, locals:{user:session[:user_hash],status:session[:login_status], code:params[:code]})
-end

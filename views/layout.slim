@@ -8,19 +8,6 @@ html lang="en"
         link rel="stylesheet" href="css/style.css"/  
     <style> a {text-decoration: none; color: #101010;} </style>
     body
-        div.header
-            div.gallery
-                div.links
-                div.user
-                    - if status
-                        a #{user[:userame]}
-                    - else
-                        div.login-wrapper
-                            article.login
-                                a href=('/login') login
-                            article.register
-                                a href=('/register') register
 
- 
         div.footer
     ==yield

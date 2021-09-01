@@ -1,3 +1,15 @@
+div.header
+    div.gallery
+        div.links
+        div.user
+            - if status
+                a #{user[:userame]}
+            - else
+                div.login-wrapper
+                    article.login
+                        a href=('/login') login
+                    article.register
+                        a href=('/register') register
 div.bg
     img.bg src="#{splash}"
 
